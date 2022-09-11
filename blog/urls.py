@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.index, name = "index"),
     path('about/', views.about, name = "about"),
     path('blogs/',include("article.urls")),
+    path('user/',include("user.urls")),
 ]
 
 

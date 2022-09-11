@@ -14,14 +14,24 @@
           </li>
 
         </ul>
+
         <ul class="navbar-nav ms-auto">
+          {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/blogs/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/user/logout">Logout</a>
+            </li>
+          {% else %}
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/user/login">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/user/register">Register</a>
-              </li>
-          </ul>
+              <a class="nav-link active" aria-current="page" href="/user/register">Register</a>
+            </li>
+          {% endif %}
+        </ul>
           
       </div>
 

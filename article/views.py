@@ -1,5 +1,6 @@
 from http.client import HTTP_PORT
 from django.shortcuts import render,HttpResponse
+from .forms import ArticleForm
 
 def index(request):
     context = {
@@ -14,4 +15,6 @@ def dashboard(request):
     return render(request,"dashboard.html")
 
 def addblog(request):
-    return render(request,"addblog.html")
+    form = ArticleForm()
+    
+    return render(request,"addblog.html",{"form":form})

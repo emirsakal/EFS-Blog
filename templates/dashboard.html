@@ -1,4 +1,4 @@
-ap{% extends 'layout.html' %}
+{% extends 'layout.html' %}
 
 {% block body %}
 
@@ -28,7 +28,7 @@ ap{% extends 'layout.html' %}
             {% for article in articles %}
                 <tr>
                     <th scope="row">{{article.id}}</th>
-                    <td>{{article.title}}</td>
+                    <td><a href = "/blogs/blog/{{article.id}}">{{article.title}}</a></td>
                     <td>{{article.author.username}}</td>
                     <td>{{article.created_date}}</td>
                     <td><a href="/blogs/update/{{article.id}}" class = "btn btn-danger">Update</a></td>

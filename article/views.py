@@ -1,5 +1,5 @@
 from http.client import HTTP_PORT
-from django.shortcuts import render,HttpResponse,redirect
+from django.shortcuts import render,HttpResponse,redirect,get_object_or_404
 
 from article.models import Article
 from .forms import ArticleForm
@@ -34,3 +34,8 @@ def addarticle(request):
         return redirect("index")
     
     return render(request,"addblog.html",{"form":form})
+
+def detail(request,id):
+    article = get_object_or_404(Article,id = id)
+    # article = Article.objects.filter(id = id).first()
+    return render(request,"detail.html",{"article":article})

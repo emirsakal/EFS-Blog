@@ -7,4 +7,5 @@ app_name = "article"
 urlpatterns = [
     path('dashboard/',views.dashboard,name = "dashboard"),
     path('addblog/',views.addarticle,name = "addblog"),
+    path('blog/<int:id>',views.detail,name = "detail"),
 ]

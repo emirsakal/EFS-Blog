@@ -9,3 +9,9 @@ def index(request):
 
 def about(request):
     return render(request,"about.html")
+
+def dashboard(request):
+    return render(request,"dashboard.html")
+
+def addblog(request):
+    return render(request,"addblog.html")

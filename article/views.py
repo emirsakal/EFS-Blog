@@ -40,3 +40,18 @@ def detail(request,id):
     article = get_object_or_404(Article,id = id)
     # article = Article.objects.filter(id = id).first()
     return render(request,"detail.html",{"article":article})
+
+def updateArticle(request,id):
+    article = get_object_or_404(Article,id = id)
+    form = ArticleForm(request.POST or None,request.FILES or None,instance = article)
+    if form.is_valid():
+        article = form.save(commit = False)
+
+        article.author = request.user
+        article.save()
+
+        messages.success(request,"Blog is succesfully updated.")
+        return redirect("index")
+
+    
+    return render(request,"update.html",{"form":form})

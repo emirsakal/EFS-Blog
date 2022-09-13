@@ -9,4 +9,5 @@ urlpatterns = [
     path('addblog/',views.addarticle,name = "addblog"),
     path('blog/<int:id>',views.detail,name = "detail"),
     path('update/<int:id>',views.updateArticle,name = "update"),
+    path('delete/<int:id>',views.deleteArticle,name = "delete"),
 ]

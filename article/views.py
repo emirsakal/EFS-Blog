@@ -1,5 +1,6 @@
 from http.client import HTTP_PORT
 from django.shortcuts import render,HttpResponse,redirect,get_object_or_404
+import article
 
 from article.models import Article
 from .forms import ArticleForm
@@ -32,7 +33,7 @@ def addarticle(request):
         article.save()
 
         messages.success(request,"Blog is succesfully created.")
-        return redirect("index")
+        return redirect("article:dashboard")
     
     return render(request,"addblog.html",{"form":form})
 
@@ -51,7 +52,16 @@ def updateArticle(request,id):
         article.save()
 
         messages.success(request,"Blog is succesfully updated.")
-        return redirect("index")
+        return redirect("article:dashboard")
 
     
     return render(request,"update.html",{"form":form})
+
+def deleteArticle(request,id):
+    article = get_object_or_404(Article,id = id)
+
+    article.delete()
+
+    messages.success(request,"Blog is succesfully deleted.")
+
+    return redirect("article:dashboard")

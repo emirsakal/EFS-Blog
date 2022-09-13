@@ -7,7 +7,7 @@
     <div class="col-md-6 offset-md-3">
         <h3>Add Blog</h3>
         <hr>
-        <form method = "post" enctype = "multipart/from-data">
+        <form method = "POST" enctype = "multipart/form-data">
             {% csrf_token %}
             {{ form.media }}
             {{ form|crispy }}

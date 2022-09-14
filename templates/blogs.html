@@ -34,7 +34,7 @@
                             </header>
                             <!-- Preview image figure-->
                             {% if article.article_image %}
-                                <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="" />
+                                <a href="/blogs/blog/{{article.id}}"><img class="img-fluid rounded" src="{{article.article_image.url}}" alt="" /></a>
                             {% endif %}
                             <!-- Post content-->
                             <section class="mb-5">

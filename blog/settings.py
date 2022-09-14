@@ -142,6 +142,14 @@ CKEDITOR_CONFIGS = {
         "removePlugins": "stylesheetparser",
         "allowedContent" : True,
         "width" : "100%",
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Font','FontSize','TextColor', 'BGColor'],
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
     }
 }
 

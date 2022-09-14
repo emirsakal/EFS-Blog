@@ -8,6 +8,11 @@ from .forms import ArticleForm
 from django.contrib import messages
 from .models import Article
 
+def articles(request):
+    articles = Article.objects.all()
+
+    return render(request,"blogs.html",{"articles":articles})
+
 def index(request):
     context = {
         "numbers" :[1,2,3,4,5,6]

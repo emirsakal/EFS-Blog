@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class = "row">
+    <div class="col-md-8 offset-md-3">
+        <h3>Makaleler</h3>
+        <hr>
+    </div>
+</div>
+
+{% if articles %}
+
+    {% for article in articles %}
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-10 offset-md-3">
+                    <div class="col-lg-8">
+                        <!-- Post content-->
+                        <article>
+                            <!-- Post header-->
+                            <header class="mb-4">
+                                <!-- Post title-->
+                                <a href="/blogs/blog/{{article.id}}"><h2 class="fw-bolder mb-1">{{article.title}}</h2></a>
+                                <!-- Author -->
+                                <p class ="lead">
+                                    by {{article.author.username}}
+                                </p>
+                                <!-- Post meta content-->
+                                <div class="text-muted fst-italic mb-2">{{article.created_date}}</div>
+                                <!-- Post categories-->
+                                <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
+                                <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+                            </header>
+                            <!-- Preview image figure-->
+                            {% if article.article_image %}
+                                <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="" />
+                            {% endif %}
+                            <!-- Post content-->
+                            <section class="mb-5">
+                                <p class="fs-5 mb-4">
+                                    {{article.content|safe}}
+                                </p>
+                            </section>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% else %}
+    <div class = "alert alert-danger">
+        There is no blog available.
+    </div>
+{% endif %}
+
+{% endblock body %}
+
+
+

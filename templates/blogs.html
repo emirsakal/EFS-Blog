@@ -21,7 +21,7 @@
                             <!-- Post header-->
                             <header class="mb-4">
                                 <!-- Post title-->
-                                <a href="/blogs/blog/{{article.id}}"><h2 class="fw-bolder mb-1">{{article.title}}</h2></a>
+                                <a href="/blogs/blog/{{article.id}}"><h2 class="fw-bolder mb-1" style = "color : black;">{{article.title}}</h2></a>
                                 <!-- Author -->
                                 <p class ="lead">
                                     by {{article.author.username}}
@@ -39,10 +39,14 @@
                             <!-- Post content-->
                             <section class="mb-5">
                                 <p class="fs-5 mb-4">
-                                    {{article.content|safe}}
+                                    {{article.content|safe|truncatewords:30}}
                                 </p>
                             </section>
                         </article>
+                        <a style ="float : right;" href="/blogs/blog/{{article.id}}" class ="btn btn-danger">Read More</a>
+                        <br>
+                        <br>
+                        <hr>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,12 @@ from django.contrib import messages
 from .models import Article
 
 def articles(request):
+    keyword = request.GET.get("keyword")
+
+    if keyword:
+        articles = Article.objects.filter(title__contains = keyword)
+        return render(request,"blogs.html",{"articles":articles})
+    
     articles = Article.objects.all()
 
     return render(request,"blogs.html",{"articles":articles})

@@ -15,6 +15,7 @@
     <div class="col-md-10 offset-md-3">
         <div class="col-lg-8">
             <form>
+                {% csrf_token %}
                 <input type="text" name ="keyword" class="input-sm" maxlength ="64" placeholder="Text here..."/>
                 <button type="submit" class="btn btn-outline-primary">Search</button>
             </form>
@@ -67,8 +68,15 @@
     {% endfor %}
 
 {% else %}
-    <div class = "alert alert-danger">
-        There is no blog available.
+    <div class = "row">
+        <div class="col-md-10 offset-md-3">
+            <div class="col-lg-8">
+                <br><br>
+                <div class = "alert alert-danger">
+                    There is no blog available.
+                </div>
+            </div>
+        </div>
     </div>
 {% endif %}
 

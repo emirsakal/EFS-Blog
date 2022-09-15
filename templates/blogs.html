@@ -35,7 +35,7 @@
                             <!-- Post header-->
                             <header class="mb-4">
                                 <!-- Post title-->
-                                <a href="/blogs/blog/{{article.id}}"><h2 class="fw-bolder mb-1" style = "color : black;">{{article.title}}</h2></a>
+                                <a href="{% url 'article:detail' article.id %}"><h2 class="fw-bolder mb-1" style = "color : black;">{{article.title}}</h2></a>
                                 <!-- Author -->
                                 <p class ="lead">
                                     by {{article.author.username}}
@@ -48,7 +48,7 @@
                             </header>
                             <!-- Preview image figure-->
                             {% if article.article_image %}
-                                <a href="/blogs/blog/{{article.id}}"><img class="img-fluid rounded" src="{{article.article_image.url}}" alt="" /></a>
+                                <a href="{% url 'article:detail' article.id %}"><img class="img-fluid rounded" src="{{article.article_image.url}}" alt="" /></a>
                             {% endif %}
                             <!-- Post content-->
                             <section class="mb-5">
@@ -57,7 +57,7 @@
                                 </p>
                             </section>
                         </article>
-                        <a style ="float : right;" href="/blogs/blog/{{article.id}}" class ="btn btn-danger">Read More</a>
+                        <a style ="float : right;" href="{% url 'article:detail' article.id %}" class ="btn btn-danger">Read More</a>
                         <br>
                         <br>
                         <hr>

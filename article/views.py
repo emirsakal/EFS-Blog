@@ -1,12 +1,12 @@
 from http.client import HTTP_PORT
-from django.shortcuts import render,HttpResponse,redirect,get_object_or_404
+from django.shortcuts import render,HttpResponse,redirect,get_object_or_404,reverse
 from django.contrib.auth.decorators import login_required
 import article
 
 from article.models import Article
 from .forms import ArticleForm
 from django.contrib import messages
-from .models import Article
+from .models import Article,Comment
 
 def articles(request):
     keyword = request.GET.get("keyword")
@@ -89,4 +89,16 @@ def deleteArticle(request,id):
         return redirect("article:dashboard")
 
 def addComment(request,id):
-    pass
+    article = get_object_or_404(Article,id = id)
+
+    if request.method == "POST":
+        comment_author = request.POST.get("comment_author")
+        comment_content = request.POST.get("comment_content")
+        
+        newComment = Comment(comment_author= comment_author,comment_content=comment_content)
+
+        newComment.article = article
+
+        newComment.save()
+    
+    return redirect(reverse("article:detail",kwargs={"id":id}))

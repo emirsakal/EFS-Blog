@@ -1,7 +1,10 @@
 from django.contrib import admin
-from .models import Article
+from .models import Article,Comment
 
 # admin.site.register(Article)
+
+admin.site.register(Comment)
+
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
 
@@ -12,5 +15,6 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = ["title"]
 
     list_filter = ["created_date"]
+    
     class Meta:
         model = Article

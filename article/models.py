@@ -9,3 +9,12 @@ class Article(models.Model):
     article_image = models.FileField(blank = True,null = True,verbose_name="Image")
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    article = models.ForeignKey(Article,on_delete= models.CASCADE,verbose_name= "Blog",related_name="comments")
+    comment_author = models.CharField(max_length= 50,verbose_name="Name")
+    comment_content = models.CharField(max_length=200,verbose_name="Comment")
+    comment_date = models.DateTimeField(auto_now_add= True,verbose_name="Date")
+    
+    def __str__(self):
+        return self.comment_author + " | " + str(self.comment_content)

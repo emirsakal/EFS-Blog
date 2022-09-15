@@ -32,6 +32,36 @@
                     </p>
                 </section>
             </article>
+            <!-- Comments -->
+            <div class="card mb-5">
+                <h5 class ="card-header"> Leave a Comment:</h5>
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <!-- Comment form-->
+                        <form class="mb-4" method = "post" action ="{% url 'article:comment' article.id %}">
+                            {% csrf_token %}
+                                <div class="form-group">
+                                  <label for="formGroupExampleInput">Name</label>
+                                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter your name.">
+                                </div>
+                            <div class ="form-group">
+                                <label for="formGroupExampleInput">Comment</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        <!-- Single comment
+                        <div class="d-flex">
+                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                            <div class="ms-3">
+                                <div class="fw-bold">Commenter Name</div>
+                                When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

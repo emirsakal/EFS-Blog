@@ -87,3 +87,6 @@ def deleteArticle(request,id):
     else:
         messages.info(request,"You don't have permission to delete this blog or it doesn't exist.")
         return redirect("article:dashboard")
+
+def addComment(request,id):
+    pass

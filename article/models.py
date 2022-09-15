@@ -7,6 +7,7 @@ class Article(models.Model):
     content = RichTextField()
     created_date = models.DateTimeField(auto_now_add=True, verbose_name= "Created Date")
     article_image = models.FileField(blank = True,null = True,verbose_name="Image")
+    article_image2 = models.FileField(blank = True,null = True,verbose_name="Image 2")
     def __str__(self):
         return self.title
 

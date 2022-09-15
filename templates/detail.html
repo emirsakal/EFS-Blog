@@ -22,8 +22,17 @@
                     <!-- <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a> -->
                 </header>
                 <!-- Preview image figure-->
-                {% if article.article_image %}
+                {% if article.article_image and article.article_image2 %}
+                    <div class ="container">
+                        <div class ="row">
+                            <div class ="col-md"><img class="img-fluid rounded" src="{{article.article_image.url}}" alt="" /></div>
+                            <div class ="col-md"><img class="img-fluid rounded" src="{{article.article_image2.url}}" alt="" /></div>
+                        </div>
+                    </div>
+                {% elif article.article_image %}
                     <img class="img-fluid rounded" src="{{article.article_image.url}}" alt="" />
+                {% elif article.article_image2 %}
+                    <img class="img-fluid rounded" src="{{article.article_image2.url}}" alt="" />
                 {% endif %}
                 <!-- Post content-->
                 <section class="mb-5">

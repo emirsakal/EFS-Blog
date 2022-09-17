@@ -104,6 +104,11 @@ i{
     padding-block: 1rem;
 }
 
+.navbar-nav > li{
+    margin-left:5px;
+    margin-right:5px;
+  }
+
 /* ARTICLE */
 
 .article{
@@ -192,4 +197,5 @@ i{
     text-align: center;
     padding: 1rem;
 }
+
 

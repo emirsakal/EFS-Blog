@@ -207,3 +207,8 @@ i{
     width:100%;
     max-height: 800px !important;
 }
+
+.slider-image{
+    max-width: 100%;
+    max-height: 600px;
+}

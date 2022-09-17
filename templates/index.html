@@ -2,11 +2,37 @@
 
 {% block body %}
 
-<div class ="jumbotron text-center">
-    <h3>the House Of Memories</h3>
-    <p>Hoşgeldiniz...</p>
+<link rel="stylesheet" href="/static/css/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="/static/css/main.css">
+
+<div class="row">
+  <div class="col-md">
+    <img class="bd-placeholder-img" width="100%" height="100%" src="/media/tavern.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+  </div>
+  <div class="col-md">
+    <img class="bd-placeholder-img" width="100%" height="100%" src="/media/tavern_logo.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+  </div>
+  <div class="col-md">
+    <img class="bd-placeholder-img" width="100%" height="100%" src="/media/tavern_keeper.png" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+  </div>
+</div>
+
+<div class="homepage-title">
+  <h1 class="homepage-title">
+      <span class="homepage-title">SAKAL'S TAVERN</span>
+  </h1>
+</div>
+<div class="homepage-slogan">
+  <span> a good place for stories.</span>
 </div>
 <br><br>
+
+<!--  IMAGE   -->
+
+<img class="bd-placeholder-img bd-placeholder-img-lg img-fluid" width="100%" height="250" src="/media/tavern_table.png" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+
+<!-- 3 POST  -->
+
 <div class ="container">
     <div class ="row">
         <div class="col-md">
@@ -37,7 +63,7 @@
 
             <div class="card-body">
                 <h3 class="card-title">Ivar the Boneless</h3>
-                <p class="card-text">Ivar the Boneless was a Viking chieftain who was said to be the son of the Danish king Ragnar Lothbrok. Ivar invaded England not to plunder, as was typical of Viking raiders, but to conquer. Much of what is known about his life is from legend. I am Ivar the Boneless.</p>
+                <p class="card-text">Ivar the Boneless was a Viking chieftain who was said to be the son of the Danish king Ragnar Lothbrok. Ivar invaded England not to plunder, as was typical of Viking raiders, but to conquer. Much of what is known about his life is from legend. I am Ivar the Boneless. Who do you think Who I</p>
                 <a href="/blogs/blog/36" class="btn btn-primary">Read More</a>
             </div>
             </div>
@@ -55,25 +81,25 @@
       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target= "#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <a href="/blogs/blog/52"><img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" src="/media/kraken.jpg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img></a>
+            <a href="/blogs/blog/52"><img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="50%" height="500" src="/media/kraken.jpg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img></a>
 
             <div class="carousel-caption d-none d-md-block">
               <h1>KRAKEN</h1>
             </div>
           </div>
           <div class="carousel-item">
-            <a href="/blogs/blog/53"><img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" src="/media/hydra.jpg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img></a>
+            <a href="/blogs/blog/53"><img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="50%" height="500" src="/media/hydra.jpg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img></a>
             <div class="carousel-caption d-none d-md-block">
               <h1>HYDRA</h1>
             </div>
           </div>
           <div class="carousel-item">
-            <a href="/blogs/blog/54"><img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" src="/media/siren.jpg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img></a>
+            <a href="/blogs/blog/54"><img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="50%" height="500" src="/media/siren.jpg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"></img></a>
 
             <div class="carousel-caption d-none d-md-block">
               <h1>SIREN</h1>
@@ -92,11 +118,7 @@
       </div>
     </div>
   </article>
-
-
-
-
-
+  
 <script src="/static/js/swiper-bundle.min.js"></script>
 <script src="/static/js/main.js"></script>
 {% endblock body %}

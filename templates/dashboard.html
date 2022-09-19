@@ -2,20 +2,35 @@
 
 {% block body %}
 
-<h3> Dashboard </h3>
+<style>
+    body{
+
+    background-color: #efefef;
+    background-image : url(/static/img/bg6.jpg);
+    background-repeat : no-repeat;
+    background-size:cover;
+    width:100%;
+    height:100%;
+    background-attachment:fixed;
+    background-position:center center;
+    }
+</style>
+
+
+<h3 style = "color : white; text-align:center; font-weight: bold;"> Dashboard </h3>
 <hr>
-<p>
-    Welcome, <small>{{request.user.username}}</small>
+<p style = "color : white; text-align:center;">
+    Welcome, <small style = "color : green; font-weight: bold;">{{request.user.username}}</small>
 </p>
 <hr>
 
-<a class = "btn btn-danger" href = "{% url 'article:addblog' %}"> Add Blog </a>
+<a class = "btn btn-danger" style = "float : right;" href = "{% url 'article:addblog' %}"><small style="font-weight: bold;">Add Blog</small></a>
 <br><br><br>
 
 {% if articles %}
     <table class="table">
         <thead>
-        <tr>
+        <tr style = "color : white;">
             <th scope="col">id</th>
             <th scope="col">Title</th>
             <th scope="col">Author</th>
@@ -26,13 +41,13 @@
         </thead>
         <tbody>
             {% for article in articles %}
-                <tr>
+                <tr style = "color : white; font-family:courier; font-weight: bold;">
                     <th scope="row">{{article.id}}</th>
                     <td><a href = "{% url 'article:detail' article.id %}">{{article.title}}</a></td>
                     <td>{{article.author.username}}</td>
                     <td>{{article.created_date}}</td>
-                    <td><a href="{% url 'article:update' article.id %}" class = "btn btn-danger">Update</a></td>
-                    <td><a class = "btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</a></td>
+                    <td><a href="{% url 'article:update' article.id %}" class = "btn btn-danger"><small style="font-weight: bold;">Update</small></a></td>
+                    <td><a class = "btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><small style="font-weight: bold;">Delete</small></a></td>
 
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

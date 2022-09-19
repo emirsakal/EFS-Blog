@@ -5,7 +5,7 @@
         body{
     
         background-color: #efefef;
-        background-image : url(/media/Light-Grey-Background-Hd-5-1.jpg);
+        background-image : url(/static/img/bookshelf.jpg);
         background-repeat : no-repeat;
         background-size:cover;
         width:100%;
@@ -13,49 +13,24 @@
         background-attachment:fixed;
         background-position:center center;
         }
-    
-        #len{
-            position: relative;
-            left : 5%;
-            font-size:20px
-    
-        }
-        #appear{
-            display:none;
-    
-        }
-    
-        @media all and (max-width:480px){
-            #len{
-                display:none;
-            }
-    
-            #appear{
-                display:flex;
-            }
-        }
     </style>
-
-<div class = "row">
-    <div class="col-md-10 offset-md-2">
-        <div class="col-lg-10">
-            <h3>Blogs</h3>
-            <hr>
+    <div class="container mt-5">
+        <div class = "row">
+            <div class="col-md-10 offset-md-2">
+                <div class="col-lg-10">
+                    <div class ="card p-3">
+                        <h1 style="color:black;">Blogs</h1>
+                        <hr>
+                        <form>
+                            {% csrf_token %}
+                            <input type="text" name ="keyword" class="input-sm" maxlength ="64" placeholder="Text here..."/>
+                            <button type="submit" class="btn btn-outline-primary">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<div class ="row">
-    <div class="col-md-10 offset-md-2">
-        <div class="col-lg-8">
-            <form>
-                {% csrf_token %}
-                <input type="text" name ="keyword" class="input-sm" maxlength ="64" placeholder="Text here..."/>
-                <button type="submit" class="btn btn-outline-primary">Search</button>
-            </form>
-        </div>
-    </div>
-</div>
 
 {% if articles %}
 

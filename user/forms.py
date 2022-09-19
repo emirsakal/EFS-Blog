@@ -1,3 +1,4 @@
+from turtle import width
 from django import forms
 
 class LoginForm(forms.Form):
@@ -6,7 +7,7 @@ class LoginForm(forms.Form):
 
 class RegisterForm(forms.Form):
 
-    username = forms.CharField(max_length=50,label = "Username")
+    username = forms.CharField(max_length=50,label = "Username",)
     password = forms.CharField(max_length=20,label = "Password",widget = forms.PasswordInput)
     confirm = forms.CharField(max_length=20,label = "Confirm Password",widget = forms.PasswordInput)
     

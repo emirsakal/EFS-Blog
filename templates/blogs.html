@@ -1,10 +1,44 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+    <style>
+        body{
+    
+        background-color: #efefef;
+        background-image : url(/media/Light-Grey-Background-Hd-5-1.jpg);
+        background-repeat : no-repeat;
+        background-size:cover;
+        width:100%;
+        height:100%;
+        background-attachment:fixed;
+        background-position:center center;
+        }
+    
+        #len{
+            position: relative;
+            left : 5%;
+            font-size:20px
+    
+        }
+        #appear{
+            display:none;
+    
+        }
+    
+        @media all and (max-width:480px){
+            #len{
+                display:none;
+            }
+    
+            #appear{
+                display:flex;
+            }
+        }
+    </style>
 
 <div class = "row">
-    <div class="col-md-10 offset-md-3">
-        <div class="col-lg-8">
+    <div class="col-md-10 offset-md-2">
+        <div class="col-lg-10">
             <h3>Blogs</h3>
             <hr>
         </div>
@@ -12,7 +46,7 @@
 </div>
 
 <div class ="row">
-    <div class="col-md-10 offset-md-3">
+    <div class="col-md-10 offset-md-2">
         <div class="col-lg-8">
             <form>
                 {% csrf_token %}
@@ -28,10 +62,10 @@
     {% for article in articles %}
         <div class="container mt-5">
             <div class="row">
-                <div class="col-md-10 offset-md-3">
-                    <div class="col-lg-8">
+                <div class="col-md-10 offset-md-2">
+                    <div class="col-lg-10">
                         <!-- Post content-->
-                        <article>
+                        <article class="card p-4">
                             <!-- Post header-->
                             <header class="mb-4">
                                 <!-- Post title-->
@@ -42,13 +76,12 @@
                                 </p>
                                 <!-- Post meta content-->
                                 <div class="text-muted fst-italic mb-2">{{article.created_date}}</div>
-                                <!-- Post categories-->
-                                <!-- <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a> -->
-                                <!-- <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a> -->
                             </header>
+                            <hr>
                             <!-- Preview image figure-->
                             {% if article.article_image %}
                                 <a href="{% url 'article:detail' article.id %}"><img class="img-fluid rounded" src="{{article.article_image.url}}" alt="" /></a>
+                                <hr>
                             {% endif %}
                             <!-- Post content-->
                             <section class="mb-5">
@@ -56,11 +89,8 @@
                                     {{article.content|safe|truncatewords:30}}
                                 </p>
                             </section>
+                            <div><a style ="float : right" href="{% url 'article:detail' article.id %}" class ="btn btn-danger">Read More</a></div>
                         </article>
-                        <a style ="float : right;" href="{% url 'article:detail' article.id %}" class ="btn btn-danger">Read More</a>
-                        <br>
-                        <br>
-                        <hr>
                     </div>
                 </div>
             </div>

@@ -4,8 +4,6 @@
 
 <style>
     body{
-
-    background-color: #efefef;
     background-image : url(/static/img/bg6.jpg);
     background-repeat : no-repeat;
     background-size:cover;
@@ -41,7 +39,7 @@
         </thead>
         <tbody>
             {% for article in articles %}
-                <tr style = "color : white; font-family:courier; font-weight: bold;">
+                <tr style = "color : white; font-family:Didot, serif; font-weight: bold;">
                     <th scope="row">{{article.id}}</th>
                     <td><a href = "{% url 'article:detail' article.id %}">{{article.title}}</a></td>
                     <td>{{article.author.username}}</td>

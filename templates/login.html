@@ -7,7 +7,7 @@
 
 <style>
     body{
-    background-image : url('/static/img/whitebackground.jpg');
+    background-image : url('/static/img/rb11.jpg');
     background-repeat : no-repeat;
     background-size:cover;
     width:100%;
@@ -19,14 +19,14 @@
 
 <br><br><br><br><br><br><br><br>
 <div class="row">
-    <div class="col-md-6 offset-md-2">
-        <div class="col-lg-11">
+    <div class="col-md-6 offset-md-7">
+        <div class="col-lg-8">
             <div class ="card p-3">
                 <br>
-                <h3 style = "text-align : center;">Login</h3>
+                <h3 style = "text-align : center; color : black; font-weight : bold; font-family : Didot, serif;">Login</h3>
                 <hr>
                 <br>
-                <form method = "post">
+                <form method = "post" style = "color : black;">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <br>

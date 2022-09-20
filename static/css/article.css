@@ -145,6 +145,11 @@
     padding: 0 3rem;
 }
 
+.slider-image{
+    max-width: 100%;
+    max-height: 500px;
+}
+
 /* Media queries */
 @media screen and (max-width: 700px){
     .container1{
@@ -159,7 +164,7 @@
 
 @media screen and (min-width: 768px){
     .container1{
-        max-width: 90%;
+        max-width: 95%;
         margin: 0 auto;
         padding: 0 3rem;
     }
@@ -167,7 +172,7 @@
 
 @media screen and (min-width: 1024px){
     .container1{
-        max-width: 100%;
+        max-width: 85%;
         margin: 0 auto;
         padding: 0 3rem;
     }
@@ -175,7 +180,7 @@
 
 @media screen and (min-width: 1500px){
     .container1{
-        max-width: 85%;
+        max-width: 75%;
         margin: 0 auto;
         padding: 0 3rem;
     }

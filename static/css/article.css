@@ -157,9 +157,6 @@
         margin: 0 auto;
         padding: 0 3rem;
     }
-    .article-data-container{
-        max-height: 30%;
-    }
 }
 
 @media screen and (min-width: 768px){
@@ -172,7 +169,7 @@
 
 @media screen and (min-width: 1024px){
     .container1{
-        max-width: 85%;
+        max-width: 90%;
         margin: 0 auto;
         padding: 0 3rem;
     }
@@ -180,7 +177,7 @@
 
 @media screen and (min-width: 1500px){
     .container1{
-        max-width: 75%;
+        max-width: 80%;
         margin: 0 auto;
         padding: 0 3rem;
     }

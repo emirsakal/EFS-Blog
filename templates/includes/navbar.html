@@ -21,14 +21,14 @@
 
         <ul class="navbar-nav ms-auto">
           {% if request.user.is_authenticated %}
-            <li class="nav-item">
+            <li class="nav-item me-2">
               <a class="btn btn-outline-success" aria-current="page" href="{% url 'article:dashboard' %}">Dashboard</a>
             </li>
             <li class="nav-item">
               <a class="btn btn-outline-danger" aria-current="page" href="{% url 'user:logout' %}">Logout</a>
             </li>
           {% else %}
-            <li class="nav-item">
+            <li class="nav-item me-2">
               <a class="btn btn-outline-primary" aria-current="page" href="{% url 'user:login' %}">Login</a>
             </li>
             <li class="nav-item">

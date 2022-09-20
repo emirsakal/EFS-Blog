@@ -2,4 +2,4 @@
 a Django/Python based Blog Website.
 
 
-Website : emirsakal.pythonanywhere.com
+Website : https://emirsakal.pythonanywhere.com/
